@@ -1,0 +1,44 @@
+---
+title: "New York Temperature"
+author: "Han"
+date: "4/19/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Coursera Reproducible Pitch
+
+- URL: *https://github.com/gaodalaba/DataProductWeek4*
+- Find here all the data that have been use for this presentation and also for the first part of the data Science Project: "First, you will create a Shiny application and deploy it on Rstudio's servers.Second, you will use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about your application."
+
+### Find all details here
+URL: *https://www.coursera.org/learn/data-products/peer/tMYrn/course-project-shiny-application-and-reproducible-pitch*
+
+## New York Air Quality
+
+### Data Intro
+
+> Daily air quality measurements in New York, May to September 1973.
+
+## New York Air Quality
+### Details
+
+>Ozone: Mean ozone in parts per billion from 1300 to 1500 hours at Roosevelt Island
+
+>Solar.R: Solar radiation in Langleys in the frequency band 4000–7700 Angstroms from 0800 to 1200 hours at Central Park
+
+>Wind: Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport
+
+>Temp: Maximum daily temperature in degrees Fahrenheit at La Guardia Airport.
+
+## Main Code
+```
+AQI <- airquality
+x    <- AQI[, 4]
+bins <- seq(min(x), max(x), length.out = input$bins + 1)
+hist(x, breaks = bins, col = 'darkgray', border = 'white', xlab = "Temperature Bins")
+```
+
